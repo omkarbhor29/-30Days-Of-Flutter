@@ -1,22 +1,15 @@
+import 'package:first_app/home_page.dart';
 import 'package:flutter/material.dart';
 
-void main()
-{
-  runApp(Myapp());
+void main() {
+  runApp(MyApp());
 }
 
-class Myapp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Material(
-          child: Center(
-            child: Container(
-              child: Text("Flutter Application"),
-          ),
-        ),
-      ),
+      home: HomePage(),
     );
   }
 }
