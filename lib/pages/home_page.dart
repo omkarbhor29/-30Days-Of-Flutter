@@ -1,3 +1,4 @@
+import 'package:first_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,7 +8,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("New App"),
+        title: Text("Catalog App"),
         // backgroundColor: Colors.redAccent,
       ),
       body: Center(
@@ -15,7 +16,7 @@ class HomePage extends StatelessWidget {
           child: Text("Welcome $name to $days Days of Flutter"),
         ),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }

@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
           key: _formkey,
           child: Column(
             children: [
-              Image.asset("assets/images/login.png", fit: BoxFit.cover),
+              Image.asset("assets/images/hey.png", fit: BoxFit.cover),
               SizedBox(
                 height: 20.0,
               ),
@@ -60,7 +60,13 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
-                          hintText: "Enter username", labelText: "Username"),
+                          border: new OutlineInputBorder(
+                            borderRadius: const BorderRadius.all(
+                              const Radius.circular(10.0),
+                            ),
+                          ),
+                          hintText: "Enter username",
+                          labelText: "Username"),
                       validator: (value) {
                         if (value.isEmpty) {
                           return "Username cannot be empty";
@@ -72,9 +78,17 @@ class _LoginPageState extends State<LoginPage> {
                         setState(() {});
                       },
                     ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
                     TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
+                        border: new OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                            const Radius.circular(10.0),
+                          ),
+                        ),
                         hintText: "Enter password",
                         labelText: "Password",
                       ),
