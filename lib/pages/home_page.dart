@@ -1,9 +1,11 @@
 import 'package:first_app/models/catalog.dart';
+import 'package:first_app/utils/routes.dart';
 import 'package:first_app/widgets/drawer.dart';
 import 'package:first_app/widgets/home_widgets/catalog_header.dart';
 import 'package:first_app/widgets/home_widgets/catalog_list.dart';
 import 'package:first_app/widgets/item_widget.dart';
 import 'package:first_app/widgets/themes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -38,6 +40,11 @@ class _HomePageState extends State<HomePage> {
     // final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
     return Scaffold(
         backgroundColor: MyTheme.creamcolor,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+          backgroundColor: MyTheme.darkbluecolor,
+          child: Icon(CupertinoIcons.cart),
+        ),
         body: SafeArea(
           child: Container(
             padding: Vx.m32,
