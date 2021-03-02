@@ -16,7 +16,7 @@ class HomeDetailPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
         ),
         bottomNavigationBar: Container(
-          color: Colors.white,
+          color: context.cardColor,
           child: ButtonBar(
             alignment: MainAxisAlignment.spaceBetween,
             buttonPadding: EdgeInsets.zero,
@@ -24,8 +24,8 @@ class HomeDetailPage extends StatelessWidget {
               "\$${catalog.price}".text.bold.xl4.red800.make(),
               ElevatedButton(
                       style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(MyTheme.darkbluecolor),
+                          backgroundColor: MaterialStateProperty.all(
+                              context.theme.buttonColor),
                           shape: MaterialStateProperty.all(StadiumBorder())),
                       onPressed: () {},
                       child: "Add to cart".text.make())
@@ -33,7 +33,7 @@ class HomeDetailPage extends StatelessWidget {
             ],
           ).p16(),
         ),
-        backgroundColor: MyTheme.creamcolor,
+        backgroundColor: context.canvasColor,
         body: SafeArea(
           bottom: false,
           child: Column(
@@ -44,16 +44,16 @@ class HomeDetailPage extends StatelessWidget {
               ).h32(context),
               Expanded(
                   child: VxArc(
-                height: 20.0,
+                height: 30.0,
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.white,
+                  color: context.cardColor,
                   width: context.screenWidth,
                   child: Column(
                     children: [
                       catalog.name.text.xl4
-                          .color(MyTheme.darkbluecolor)
+                          .color(context.accentColor)
                           .bold
                           .make(),
                       catalog.desc.text
